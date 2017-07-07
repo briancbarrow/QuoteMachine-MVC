@@ -1,0 +1,32 @@
+﻿@model QuoteMachine.Models.Quote
+
+@{
+    ViewBag.Title = "Quote Machine " + Model.Author;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Random Quote Machine</h2>
+<div class="wrapper">
+    <div class="quote">@Model.Content</div>
+    <div class="author">- @Model.Author</div>
+</div>
+
+
+<script>
+
+ $(document).ready(function() {
+ $.getJSON('/"Controller Name"/"Action Name as "LoadList', function (data) {
+
+ if (data.length == 0) {
+ alert('No data');
+ }
+ else{
+ $(data).each(function() {
+ alert(this.PropertyError);
+ });
+ }
+
+ });
+
+});
+</script>
